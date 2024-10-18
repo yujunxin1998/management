@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.yjx.common.web.config.FeignConfiguration, \
-com.yjx.common.web.exception.GlobalExceptionHandler
