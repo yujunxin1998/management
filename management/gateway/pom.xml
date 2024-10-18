@@ -40,6 +40,20 @@
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
 
+        <!-- OAuth2资源服务器-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-resource-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-jose</artifactId>
+        </dependency>
+
         <!-- 配置中心 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -57,6 +71,11 @@
         <dependency>
             <groupId>com.yjx</groupId>
             <artifactId>common-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yjx</groupId>
+            <artifactId>common-redis</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

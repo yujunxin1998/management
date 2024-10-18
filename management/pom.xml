@@ -14,6 +14,9 @@
         <module>common</module>
         <module>gateway</module>
         <module>admin</module>
+        <module>auth</module>
+        <module>admin/admin-domain</module>
+        <module>admin/admin-api</module>
     </modules>
 
     <properties>

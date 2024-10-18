@@ -33,11 +33,11 @@ public enum ResponseCode implements IResponseCode{
     }
     @Override
     public int getCode() {
-        return 0;
+        return this.code;
     }
 
     @Override
     public String getMsg() {
-        return null;
+        return this.msg;
     }
 }

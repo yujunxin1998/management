@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/system_user?allowMultiQueries=true
+    username: root
+    password: 123456
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+  cache:
+    # 缓存类型
+    type: redis
+    # 缓存时间(单位:ms)
+    redis:
+      time-to-live: 36000000
+      # 缓存null值,防止缓存穿透
+      cache-null-value: true
+      # 允许使用缓存数据
+      use-key-prefix: true
+      # 缓存前缀,默认使用注解的缓存名称{value}作为前缀和注解的key用双冒号::拼接组成完整缓存key
+      key-prefix: 'admin:'
+
+feign:
+  httpclient:
+    enabled: true
+  okhttp:
+    enabled: false

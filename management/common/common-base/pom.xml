@@ -19,11 +19,11 @@
 
     <dependencies>
         <!-- mapstruct依赖 -->
-<!--        <dependency>-->
-<!--            <groupId>org.mapstruct</groupId>-->
-<!--            <artifactId>mapstruct</artifactId>-->
-<!--            <version>${mapstruct.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
         <!-- lombok 依赖 -->
         <dependency>
             <groupId>org.projectlombok</groupId>

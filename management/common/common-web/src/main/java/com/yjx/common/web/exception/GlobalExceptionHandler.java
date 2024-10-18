@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
         log.error("[RuntimeException]",ex);
         Map<String, Object> body = new HashMap<>();
         body.put("message", ex.getMessage());
-        return new APIResponse<>(ResponseCode.FAIL,ex);
+        return new APIResponse<>(ResponseCode.FAIL);
     }
 
     /**
@@ -44,7 +44,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public APIResponse<?> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
         log.error("非法参数异常，异常原因: {}",ex.getMessage(),ex);
-        return new APIResponse<>(ResponseCode.MethodArgumentNotValidException,ex.getMessage());
+        return new APIResponse<>(ResponseCode.MethodArgumentNotValidException);
     }
 
     /**

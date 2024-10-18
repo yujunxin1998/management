@@ -39,6 +39,17 @@ spring:
             allowedHeaders: "*" # 允许所有请求头
             allowCredentials: true # 允许cookie跨域
             maxAge: 360000 # 预检请求的缓存时间，单位为秒
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          jwk-set-uri: 'http://localhost:8702/diit-auth/oauth/public-key'
+    ignore-urls:
+      - /admin/user/login
+      - /admin/user/signUp
+      - /oauth/oauth/token
+      - /oauth/oauth/public-key
+
 # 是否开启本地缓存
 local-cache:
   enabled: false

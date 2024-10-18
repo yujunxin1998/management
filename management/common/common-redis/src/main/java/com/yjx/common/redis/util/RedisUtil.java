@@ -273,7 +273,7 @@ public class RedisUtil {
      * @param key 键
      * @return
      */
-    public Map<Object, Object> getHashEntries(String key) {
+    public Map<String, Object> getHashEntries(String key) {
         return redisTemplate.opsForHash().entries(key);
     }
  

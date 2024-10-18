@@ -9,12 +9,9 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>admin</artifactId>
-    <modules>
-        <module>admin-api</module>
-        <module>admin-domain</module>
-    </modules>
-    <packaging>pom</packaging>
+    <groupId>com.diit</groupId>
+    <artifactId>auth</artifactId>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -22,13 +19,40 @@
     </properties>
 
     <dependencies>
+        <!-- spring Cloud & Alibaba -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+
+        <!-- 注册中心 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <!-- 配置中心 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <!-- OAuth2 认证服务器 -->
+        <dependency>
+            <groupId>org.springframework.security.oauth.boot</groupId>
+            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-jose</artifactId>
+        </dependency>
+
         <!-- 本项目依赖 -->
         <dependency>
             <groupId>com.yjx</groupId>
             <artifactId>common-base</artifactId>
             <version>${project.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.yjx</groupId>
             <artifactId>common-web</artifactId>
@@ -36,41 +60,9 @@
         </dependency>
         <dependency>
             <groupId>com.yjx</groupId>
-            <artifactId>common-redis</artifactId>
+            <artifactId>admin-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.yjx</groupId>
-            <artifactId>common-mybatis-plus</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <!-- openfeign依赖 1. http客户端选择okhttp 2. loadbalancer替换ribbon -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-
-        <!-- 注册中心-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-
-        <!-- Spring Cloud & Alibaba -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
-
-        <!-- 发送邮件功能 -->
-        <!--引入mail依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>

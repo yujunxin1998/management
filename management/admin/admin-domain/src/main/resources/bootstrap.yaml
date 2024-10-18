@@ -1,9 +1,9 @@
 server:
-  port: 9900
+  port: 8701
 
 spring:
   application:
-    name: gateway
+    name: admin
   cloud:
     nacos:
       # 注册中心
