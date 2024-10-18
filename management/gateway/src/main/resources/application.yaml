@@ -1,0 +1,51 @@
+spring:
+  redis:
+    timeout: PT30S
+    database: 0
+    host: localhost
+    port: 6380
+    password:
+    pool:
+      # 连接池最大连接数（使用负值表示没有限制）
+      maxactive: 64
+      # 连接池中的最大空闲连接
+      maxidle: 64
+      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      maxwait: -1
+      # 连接池中的最小空闲连接
+      minidle: 1
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 启用服务发现
+          lower-case-service-id: true
+      routes:
+        - id: admin
+          uri: lb://admin
+          predicates:
+            - Path=/admin/**
+          filters:
+            - StripPrefix=1
+            - SwaggerHeaderFilter
+      globalcors:
+        add-to-simple-url-handler-mapping: true # 解决options请求被拦截的问题
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:8081"
+            allowedMethods:
+              - "*"
+            allowedHeaders: "*" # 允许所有请求头
+            allowCredentials: true # 允许cookie跨域
+            maxAge: 360000 # 预检请求的缓存时间，单位为秒
+# 是否开启本地缓存
+local-cache:
+  enabled: false
+feign:
+  httpclient:
+    enabled: true
+  okhttp:
+    enabled: false
+  sentinel:  # 开启feign对sentinel的支持
+    enabled: false
